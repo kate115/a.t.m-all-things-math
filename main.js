@@ -50,7 +50,7 @@ function solver(a, b, el) {
     if(a != 0) {
         el.innerText = b/a;
     } else if(a == 0 && b != 0) {
-        el.innerText = 'Sorry, there is no solution to this equation.';
+        el.innerText = 'No Solutions';
     } else {
         el.innerText = 'Infinite Solutions';
     }
@@ -76,3 +76,31 @@ function solveForX2(event) {
 }
 
 linearEl2.addEventListener('submit', solveForX2);
+
+// Two-Var Linear Equations code
+let linearEl3, varA3, varB3, varC3, varD3, varE3, varF3, resultX3;
+linearEl3 = document.getElementById('linearEquation3');
+a = document.getElementById('varA3');
+b = document.getElementById('varB3');
+c = document.getElementById('varC3');
+d = document.getElementById('varD3');
+e = document.getElementById('varE3');
+f = document.getElementById('varF3');
+resultX = document.getElementById('resultX3');
+resultY = document.getElementById('resultY3');
+
+function solveForXY(event) {
+    const variableY = d.value * b.value - a.value * e.value;
+    const constantY = d.value * c.value - a.value * f.value;
+
+    solver(variableY, constantY, resultY);
+
+    const variableX = a.value * e.value - d.value * b.value;
+    const constantX = c.value * e.value - f.value * b.value;
+
+    solver(variableX, constantX, resultX);
+
+    event.preventDefault();
+}
+
+linearEl3.addEventListener('submit', solveForXY);
