@@ -42,15 +42,37 @@ var2 = document.getElementById('varB');
 resultX = document.getElementById('resultX');
 
 function solveForX(event) {
-    if(var1.value != 0) {
-        resultX.innerText = var2.value/var1.value;
-    } else if(var1.value == 0 && var2.value != 0) {
-        resultX.innerText = 'Sorry, there is no solution to this equation.';
+    solver(var1.value, var2.value, resultX)
+    event.preventDefault();
+}
+
+function solver(a, b, el) {
+    if(a != 0) {
+        el.innerText = b/a;
+    } else if(a == 0 && b != 0) {
+        el.innerText = 'Sorry, there is no solution to this equation.';
     } else {
-        resultX.innerText = 'Infinite Solutions';
+        el.innerText = 'Infinite Solutions';
     }
+}
+
+linearEl.addEventListener('submit', solveForX);
+
+// ax + b = cx + d
+let linearEl2, varA2, varB2, varC2, varD2, resultX2;
+linearEl2 = document.getElementById('linearEquation2');
+varA2 = document.getElementById('varA2');
+varB2 = document.getElementById('varB2');
+varC2 = document.getElementById('varC2');
+varD2 = document.getElementById('varD2');
+resultX2 = document.getElementById('resultX2');
+
+function solveForX2(event) {
+    const a = (varA2.value - varC2.value);
+    const b = (varD2.value - varB2.value);
+    solver(a, b, resultX2)
 
     event.preventDefault();
 }
 
-linearEl.addEventListener('submit', solveForX);
+linearEl2.addEventListener('submit', solveForX2);
