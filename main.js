@@ -34,4 +34,23 @@ function checkAndWrite(event) {
 
 formEl.addEventListener('submit', checkAndWrite);
 
-// Random Numbers code
+// Linear Equations code
+let linearEl, var1, var2, resultX;
+linearEl = document.getElementById('linearEquation');
+var1 = document.getElementById('varA');
+var2 = document.getElementById('varB');
+resultX = document.getElementById('resultX');
+
+function solveForX(event) {
+    if(var1.value != 0) {
+        resultX.innerText = var2.value/var1.value;
+    } else if(var1.value == 0 && var2.value != 0) {
+        resultX.innerText = 'Sorry, there is no solution to this equation.';
+    } else {
+        resultX.innerText = 'Infinite Solutions';
+    }
+
+    event.preventDefault();
+}
+
+linearEl.addEventListener('submit', solveForX);

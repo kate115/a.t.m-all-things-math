@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Math Practice</title>
+        <title>All Things Math</title>
     </head>
     <body>
+        <h1>All Things Math</h1>
+        <h2>Math Practice</h2>
         <p>
-            Welcome to math practice we are going to train your brain
+            Welcome to math practice we are going to train your brain here! You
+            practice your math brain starting with addition!
         </p>
         <form id="quiz">
             <label for="answer"><span id="addendOne"></span> + <span id="addendTwo"></span> =</label>
@@ -17,6 +20,22 @@
             <div id="result"></div>
             <a id="nextQLink" hidden="true" href="index.html">Next Question</a>
         </div>
+
+        <h2>Linear Equations Helper</h2>
+        <p>
+            Have you heard of ax = b? That equation is important to know how to solve
+            as it can be turned into harder linear equations. Here we will solve them!
+        </p>
+
+        <form id="linearEquation">
+            <p>
+                <input type="number" id="varA" name="varA" required style="width: 50px;">x = 
+                <input type="number" id="varB" name="varB" required style="width: 50px;">
+            </p>
+            <button type="submit" id="submitButtonX">Submit</button>
+        </form>
+
+        <div id="resultX"></div>
         
         <script src="main.js"></script>
     </body>
