@@ -1,5 +1,14 @@
-let formEl, answerEl, resultEl, submitEl;
-const answer = 75;
+let formEl, answerEl, resultEl, addendOneEl, addendTwoEl;
+addendOneEl = document.getElementById('addendOne');
+addendOneEl.innerText = Math.floor(Math.random() * 100);
+console.log(addendOneEl);
+
+addendTwoEl = document.getElementById('addendTwo');
+addendTwoEl.innerText = Math.floor(Math.random() * 100);
+console.log(addendTwoEl);
+
+const answer = parseInt(addendOneEl.innerText) + parseInt(addendTwoEl.innerText);
+console.log(answer);
 
 formEl = document.getElementById('quiz');
 console.log(formEl);
@@ -8,6 +17,7 @@ console.log(answerEl);
 resultEl = document.getElementById('result');
 console.log(resultEl);
 
+// Answer Check code
 function checkAndWrite(event) {
     if(answerEl.value == answer) {
         console.log('User got it correct and answerEl has value ' + answerEl.value);
@@ -20,3 +30,5 @@ function checkAndWrite(event) {
 }
 
 formEl.addEventListener('submit', checkAndWrite);
+
+// Random Numbers code
