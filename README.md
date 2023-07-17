@@ -1,5 +1,5 @@
-# Math Practice
-Simple JS + HTML program for math practice.
+# All Things Math
+Simple JS + HTML program for math.
 
 ## To-Do List (Based on Issue # and Priority)
 - [ ] #1
