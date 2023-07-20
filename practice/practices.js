@@ -1,14 +1,9 @@
-let formEl, answerEl, resultEl, addendOneEl, addendTwoEl, nextLink;
+let formEl, answerEl, resultEl, addendOneEl, addendTwoEl, nextLink, answer;
 addendOneEl = document.getElementById('addendOne');
-addendOneEl.innerText = Math.floor(Math.random() * 100);
 console.log(addendOneEl);
 
 addendTwoEl = document.getElementById('addendTwo');
-addendTwoEl.innerText = Math.floor(Math.random() * 100);
 console.log(addendTwoEl);
-
-const answer = parseInt(addendOneEl.innerText) + parseInt(addendTwoEl.innerText);
-console.log(answer);
 
 nextLink = document.getElementById('nextQLink');
 console.log(nextLink);
@@ -20,6 +15,18 @@ resultEl = document.getElementById('result');
 console.log(resultEl);
 
 // Answer Check code
+function reset() {
+    addendOneEl.innerText = Math.floor(Math.random() * 100);
+    addendTwoEl.innerText = Math.floor(Math.random() * 100);
+    nextLink.hidden = true;
+    resultEl.innerText = '';
+    answerEl.value = '';
+    answer = parseInt(addendOneEl.innerText) + parseInt(addendTwoEl.innerText);
+    console.log(answer);
+}
+
+reset();
+
 function checkAndWrite(event) {
     if(answerEl.value == answer) {
         console.log('User got it correct and answerEl has value ' + answerEl.value);
@@ -33,6 +40,7 @@ function checkAndWrite(event) {
 }
 
 formEl.addEventListener('submit', checkAndWrite);
+nextLink.addEventListener('click', reset);
 
 // Linear Equations
 let linearEl, varA, varB, result;
