@@ -1,39 +1,52 @@
-@media only screen and (min-width=768px) {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+}
 
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-style: normal;
-    }
-    
-    #page {
-        background-color: rgb(240, 248, 255);
-        padding: 5px;
-    }
-    
-    header {
-        padding: 5px;
-        text-align: center;
-        background-color: rgb(216, 236, 255);
-    }
-    
-    #subtitle {
-        font-style: italic;
-        text-transform: lowercase;
-    }
-    
+#page {
+    background-color: rgb(240, 248, 255);
+    padding: 5px;
+}
+
+header {
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(216, 236, 255);
+}
+
+#subtitle {
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+nav {
+    background-color: white;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#navList {
+    list-style: none;
+    padding: 0px;
+}
+
+li {
+    display: inline;
+    padding: 5px;
+}
+
+@media all and (max-width: 1000px) and (min-width: 401px) {
     nav {
-        background-color: white;
+        background-color: black;
         padding-top: 1px;
         padding-bottom: 1px;
     }
-    
-    #navList {
-        list-style: none;
-        padding: 0px;
-    }
-    
-    li {
-        display: inline;
-        padding: 5px;
+}
+
+@media all and (max-width: 600px) and (min-width: 200px) {
+    nav {
+        background-color: tomato;
+        padding-top: 1px;
+        padding-bottom: 1px;
     }
 }
