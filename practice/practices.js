@@ -43,14 +43,13 @@ formEl.addEventListener('submit', checkAndWrite);
 nextLink.addEventListener('click', reset);
 
 // Linear Equations
-let linearEl, varA, varB, result;
+let linearEl, varA, varB, result, nextQLink;
 linearEl = document.getElementById('linearEquationSolve');
 varA = document.getElementById('a');
 varB = document.getElementById('b');
 result = document.getElementById('resultEl');
+nextQLink = document.getElementById('nextLink');
 
-varA.innerText = Math.floor(Math.random() * 100);
-varB.innerText = Math.floor(Math.random() * 100);
 
 function solver(a, b, el) {
     if(a != 0) {
@@ -62,9 +61,19 @@ function solver(a, b, el) {
     }
 }
 
+function resetVars() {
+    varA.innerText = Math.floor(Math.random() * 100);
+    varB.innerText = Math.floor(Math.random() * 100);
+    result.innerText = '';
+    nextQLink.hidden = true;
+}
+
+resetVars();
+
 function solveForX(event) {
     solver(varA.innerText, varB.innerText, result);
     event.preventDefault();
 }
 
 linearEl.addEventListener('submit', solveForX);
+nextQLink.addEventListener('click', resetVars);
