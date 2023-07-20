@@ -35,18 +35,18 @@ li {
     padding: 5px;
 }
 
-@media all and (max-width: 1000px) and (min-width: 401px) {
-    nav {
-        background-color: black;
-        padding-top: 1px;
-        padding-bottom: 1px;
-    }
+
+/* iMac/Desktop NOTE: 2240px is the biggest computer's width viewport. Apple iMac 24-inch */
+@media all and (max-width: 2240px) and (min-width: 1025px) {
+    
 }
 
-@media all and (max-width: 600px) and (min-width: 200px) {
-    nav {
-        background-color: tomato;
-        padding-top: 1px;
-        padding-bottom: 1px;
-    }
+/* iPad NOTE: 1024px is the largest iPad's width viewport. iPad Pro 10th Generation */
+@media all and (max-width: 1024px) and (min-width: 501) {
+
+}
+
+/* iPhone NOTE: 430px is the biggest width viewport of an iPhone. iPhone 14 Pro Max */
+@media all and (max-width: 500px) and (min-width: 200px) {
+    
 }
