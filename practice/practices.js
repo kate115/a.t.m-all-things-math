@@ -33,3 +33,30 @@ function checkAndWrite(event) {
 }
 
 formEl.addEventListener('submit', checkAndWrite);
+
+// Linear Equations
+let linearEl, varA, varB, result;
+linearEl = document.getElementById('linearEquationSolve');
+varA = document.getElementById('a');
+varB = document.getElementById('b');
+result = document.getElementById('resultEl');
+
+varA.innerText = Math.floor(Math.random() * 100);
+varB.innerText = Math.floor(Math.random() * 100);
+
+function solver(a, b, el) {
+    if(a != 0) {
+        el.innerText = b/a;
+    } else if(a == 0 && b != 0) {
+        el.innerText = 'No Solutions';
+    } else {
+        el.innerText = 'Infinite Solutions';
+    }
+}
+
+function solveForX(event) {
+    solver(varA.innerText, varB.innerText, result);
+    event.preventDefault();
+}
+
+linearEl.addEventListener('submit', solveForX);

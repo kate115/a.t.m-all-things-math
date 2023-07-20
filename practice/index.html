@@ -27,11 +27,22 @@
                 <input type="number" id="answer" name="answer" required>
                 <button type="submit" id="submitButton">Submit</button>
             </form>
-    
-            <div>
-                <div id="result"></div>
-                <a id="nextQLink" hidden="true" href="index.html">Next Question</a>
-            </div>
+            <div id="result"></div>    
+            <a id="nextQLink" hidden="true" href="index.html">Next Question</a>
+
+            <hr>
+
+            <h2>linear equations</h2>
+            <p>Here's how this works. You'll try solving for <i>x</i> and check your answer.</p>
+
+            <form id="linearEquationSolve">
+                <p>
+                    <span id="a">a</span>x = <span id="b">b</span> <br>
+                    x = <input type="text" id="x" name="x" required style="width: 75px;">
+                </p>
+                <button type="submit" id="submitButtonX">Show Answer</button>
+            </form>
+            <div id="resultEl"></div>
         </div>
                     
         <script src="practices.js"></script>
