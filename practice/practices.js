@@ -1,7 +1,6 @@
 // Addition
 let formEl, answerEl, resultEl, addendOneEl, addendTwoEl, nextLink, answer;
 addendOneEl = document.getElementById('addendOne');
-
 addendTwoEl = document.getElementById('addendTwo');
 
 nextLink = document.getElementById('nextQLink');
@@ -82,6 +81,51 @@ function checkAndWriteSub(event) {
 
 formEl2.addEventListener('submit', checkAndWriteSub);
 nextLink2.addEventListener('click', subtractionReset);
+
+// Multiplication
+let formEl3, answerEl3, resultEl3, factor1, factor2, nextLink3, answer3;
+factor1 = document.getElementById('factor1');
+
+factor2 = document.getElementById('factor2');
+
+nextLink3 = document.getElementById('nextQLink3');
+formEl3 = document.getElementById('quiz3');
+answerEl3 = document.getElementById('answer3');
+resultEl3 = document.getElementById('result3');
+
+function resetMultiply(event) {
+    factor1.innerText = Math.floor(Math.random() * 10);
+    factor2.innerText = Math.floor(Math.random() * 10);
+    nextLink3.hidden = true;
+    resultEl3.innerText = '';
+    answerEl3.value = '';
+    console.log(answer3);
+    answer3 = parseInt(factor1.innerText) * parseInt(factor2.innerText);
+
+    if(event) {
+        event.preventDefault();
+    }
+}
+
+resetMultiply();
+
+function checkAndWriteMulti(event) {console.log(answer2)
+    if(answerEl3.value == answer3) {
+        console.log('User got it correct and answerEl has value ' + answerEl3.value);
+        resultEl3.innerText = 'Great job! You got it correct!';
+        console.log(answer3);
+        nextLink3.hidden = false;
+    } else {
+        console.log('User got it incorrect and answerEl has value ' + answerEl3.value);
+        resultEl3.innerText = 'Sorry, that was incorrect. Try again!';
+        console.log(answer3);
+    }
+
+    event.preventDefault();
+}
+
+formEl3.addEventListener('submit', checkAndWriteMulti);
+nextLink3.addEventListener('click', resetMultiply);
 
 // Linear Equations
 let linearEl, varA, varB, result, nextQLink, x;
