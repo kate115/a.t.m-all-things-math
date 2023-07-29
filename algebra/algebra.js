@@ -50,8 +50,8 @@ c = document.getElementById('varC3');
 d = document.getElementById('varD3');
 e = document.getElementById('varE3');
 f = document.getElementById('varF3');
-resultX = document.getElementById('resultX3');
-resultY = document.getElementById('resultY3');
+resultX3 = document.getElementById('resultX3');
+resultY3 = document.getElementById('resultY3');
 
 function solveForXY(event) {
     const variableY = d.value * b.value - a.value * e.value;
