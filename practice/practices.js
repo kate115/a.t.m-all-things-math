@@ -1,31 +1,36 @@
+// Addition
 let formEl, answerEl, resultEl, addendOneEl, addendTwoEl, nextLink, answer;
 addendOneEl = document.getElementById('addendOne');
-console.log(addendOneEl);
 
 addendTwoEl = document.getElementById('addendTwo');
-console.log(addendTwoEl);
 
 nextLink = document.getElementById('nextQLink');
-console.log(nextLink);
 formEl = document.getElementById('quiz');
-console.log(formEl);
 answerEl = document.getElementById('answer');
-console.log(answerEl);
 resultEl = document.getElementById('result');
-console.log(resultEl);
 
-// Answer Check code
-function reset() {
-    addendOneEl.innerText = Math.floor(Math.random() * 100);
-    addendTwoEl.innerText = Math.floor(Math.random() * 100);
-    nextLink.hidden = true;
-    resultEl.innerText = '';
-    answerEl.value = '';
-    answer = parseInt(addendOneEl.innerText) + parseInt(addendTwoEl.innerText);
+function reset(addition, num1, num2, nextQ, result, answerElement) {
+    num1.innerText = Math.floor(Math.random() * 100);
+    num2.innerText = Math.floor(Math.random() * 100);
+    nextQ.hidden = true;
+    result.innerText = '';
+    answerElement.value = '';
     console.log(answer);
+    if(addition === true) {
+        answer = parseInt(num1.innerText) + parseInt(num2.innerText);
+    } else {
+        answer2 = parseInt(num1.innerText) - parseInt(num2.innerText);
+    }
 }
 
-reset();
+function additionReset(event) {
+    reset(true, addendOneEl, addendTwoEl, nextLink, resultEl, answerEl);
+
+    if(event) {
+        event.preventDefault();
+    }
+}
+additionReset();
 
 function checkAndWrite(event) {
     if(answerEl.value == answer) {
@@ -40,7 +45,43 @@ function checkAndWrite(event) {
 }
 
 formEl.addEventListener('submit', checkAndWrite);
-nextLink.addEventListener('click', reset);
+nextLink.addEventListener('click', additionReset);
+
+// Subtraction Stuff
+let formEl2, answerEl2, resultEl2, num1, num2, nextLink2, answer2;
+num1 = document.getElementById('subtractNum1');
+
+num2 = document.getElementById('subtractNum2');
+
+nextLink2 = document.getElementById('nextQLink2');
+formEl2 = document.getElementById('quiz2');
+answerEl2 = document.getElementById('answer2');
+resultEl2 = document.getElementById('result2');
+
+function subtractionReset(event) {
+    reset(false, num1, num2, nextLink2, resultEl2, answerEl2);
+
+    if(event) {
+        event.preventDefault();
+    }
+}
+subtractionReset();
+
+function checkAndWriteSub(event) {
+    console.log(answer2)
+    if(answerEl2.value == answer2) {
+        console.log('User got it correct and answerEl has value ' + answerEl2.value);
+        resultEl2.innerText = 'Great job! You got it correct!';
+        nextLink2.hidden = false;
+    } else {
+        console.log('User got it incorrect and answerEl has value ' + answerEl2.value);
+        resultEl2.innerText = 'Sorry, that was incorrect. Try again!';
+    }
+    event.preventDefault();
+}
+
+formEl2.addEventListener('submit', checkAndWriteSub);
+nextLink2.addEventListener('click', subtractionReset);
 
 // Linear Equations
 let linearEl, varA, varB, result, nextQLink, x;
